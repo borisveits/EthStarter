@@ -18,12 +18,30 @@ class CampaignIndex extends Component
         {
             return {
                 header: address,
+                meta: "Campaign Address",
                 description: (
-                <Link route={`/campaigns/${address}`}>
-                    <a>View Campaign</a>
-                </Link>
+                <div style={{ marginTop: "12px" }}>
+                    <Link route={`/campaigns/${address}`}>
+                        <a style={{
+                            background: "linear-gradient(135deg, #667eea, #764ba2)",
+                            color: "white",
+                            padding: "8px 16px",
+                            borderRadius: "8px",
+                            textDecoration: "none",
+                            fontWeight: "500",
+                            display: "inline-block",
+                            transition: "all 0.3s ease"
+                        }}>
+                            👁️ View Campaign
+                        </a>
+                    </Link>
+                </div>
                 ),
                 fluid: true,
+                style: { 
+                    background: "rgba(255, 255, 255, 0.9)",
+                    border: "1px solid rgba(255, 255, 255, 0.2)"
+                }
             };
         });
         return <Card.Group items={items} />;
@@ -32,18 +50,28 @@ class CampaignIndex extends Component
     {
         return (
         <Layout>
-            <div>
-            <h3>Open Campaigns</h3>
-            <Link route="/campaigns/new">
-                <a>
-                <Button
-                    floated="right"
-                    content="Create Campaign"
-                    icon="add circle"
-                    primary
-                />
-                </a>
-            </Link>
+            <div className="page-header">
+                <h3>🌟 Open Campaigns</h3>
+                <p className="page-subtitle">
+                    Discover and support innovative projects on the blockchain
+                </p>
+                <Link route="/campaigns/new">
+                    <a>
+                    <Button
+                        content="🚀 Create New Campaign"
+                        icon="add circle"
+                        primary
+                        size="large"
+                        style={{
+                            fontSize: "1.1rem",
+                            padding: "14px 28px"
+                        }}
+                    />
+                    </a>
+                </Link>
+            </div>
+            
+            <div style={{ marginTop: "40px" }}>
             {this.renderCampaigns()}
             </div>
         </Layout>

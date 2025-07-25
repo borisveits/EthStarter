@@ -49,26 +49,36 @@ class RequestIndex extends Component
 
         return (
             <Layout>
-                <h3>Requests</h3>
-                <Link route={`/campaigns/${this.props.address}/requests/new`}>
-                <a>
-                    <Button primary
-                            floated="right"
-                            style={{ marginBottom: 10 }}>
-                        Add Request
-                    </Button>
-                </a>
-                </Link>
+                <div className="page-header">
+                    <h3>📋 Spending Requests</h3>
+                    <p className="page-subtitle">
+                        Review and approve how campaign funds will be spent
+                    </p>
+                    <Link route={`/campaigns/${this.props.address}/requests/new`}>
+                    <a>
+                        <Button primary
+                                size="large"
+                                style={{ 
+                                    marginBottom: 20,
+                                    fontSize: "1.1rem",
+                                    padding: "14px 28px"
+                                }}>
+                            ➕ Add New Request
+                        </Button>
+                    </a>
+                    </Link>
+                </div>
+                
                 <Table>
                     <Header>
                         <Row>
-                            <HeaderCell>ID</HeaderCell>
-                            <HeaderCell>Description</HeaderCell>
-                            <HeaderCell>Amount</HeaderCell>
-                            <HeaderCell>Recipient</HeaderCell>
-                            <HeaderCell>Approval Count</HeaderCell>
-                            <HeaderCell>Approve</HeaderCell>
-                            <HeaderCell>Finalize</HeaderCell>
+                            <HeaderCell>🔢 ID</HeaderCell>
+                            <HeaderCell>📝 Description</HeaderCell>
+                            <HeaderCell>💰 Amount</HeaderCell>
+                            <HeaderCell>👤 Recipient</HeaderCell>
+                            <HeaderCell>✅ Approvals</HeaderCell>
+                            <HeaderCell>👍 Approve</HeaderCell>
+                            <HeaderCell>🎯 Finalize</HeaderCell>
                         </Row>
                     </Header>
                     <Body>
@@ -76,7 +86,17 @@ class RequestIndex extends Component
                     </Body>
                 </Table>
 
-                <div>Found {this.props.requestCount} requests.</div>
+                <div style={{ 
+                    textAlign: "center", 
+                    marginTop: "20px",
+                    padding: "16px",
+                    background: "rgba(255, 255, 255, 0.9)",
+                    borderRadius: "12px",
+                    color: "#4a5568",
+                    fontWeight: "500"
+                }}>
+                    📊 Found {this.props.requestCount} spending requests
+                </div>
             </Layout>
         );
     }

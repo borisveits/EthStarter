@@ -42,10 +42,16 @@ class CampaignNew extends Component
     {
         return (
         <Layout>
-            <h3>Create Campaign</h3>
+            <div className="page-header">
+                <h3>🚀 Create New Campaign</h3>
+                <p className="page-subtitle">
+                    Launch your project and start raising funds on the blockchain
+                </p>
+            </div>
+            
             <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
             <Form.Field>
-                <label>Minimum Contribution</label>
+                <label>💎 Minimum Contribution</label>
                 <Input
                 label="wei"
                 labelPosition="right"
@@ -53,11 +59,28 @@ class CampaignNew extends Component
                 onChange={(event) =>
                     this.setState({ minimumContribution: event.target.value })
                 }
+                placeholder="Enter minimum contribution in wei"
                 />
+                <div style={{ 
+                    fontSize: "0.9rem", 
+                    color: "#718096", 
+                    marginTop: "8px" 
+                }}>
+                    This is the minimum amount contributors must send to participate
+                </div>
             </Form.Field>
             <Message error header="Oops!" content={this.state.errorMessage} />
-            <Button loading={this.state.loading} primary>
-                Create!
+            <Button 
+                loading={this.state.loading} 
+                primary
+                size="large"
+                style={{
+                    fontSize: "1.1rem",
+                    padding: "14px 28px",
+                    marginTop: "20px"
+                }}
+            >
+                🎯 Create Campaign
             </Button>
             </Form>
         </Layout>
