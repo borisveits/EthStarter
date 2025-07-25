@@ -180,6 +180,192 @@ const Layout = (props) => {
               margin-bottom: 2rem;
             }
             
+            .hero-section {
+              position: relative;
+              padding: 4rem 0;
+              margin: -30px -30px 40px -30px;
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              border-radius: 20px 20px 0 0;
+              overflow: hidden;
+            }
+            
+            .animated-bg {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              opacity: 0.1;
+            }
+            
+            .bg-animation {
+              position: absolute;
+              top: -50%;
+              left: -50%;
+              width: 200%;
+              height: 200%;
+              background: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px);
+              background-size: 50px 50px;
+              animation: float 20s ease-in-out infinite;
+            }
+            
+            @keyframes float {
+              0%, 100% { transform: translate(0, 0) rotate(0deg); }
+              33% { transform: translate(30px, -30px) rotate(120deg); }
+              66% { transform: translate(-20px, 20px) rotate(240deg); }
+            }
+            
+            .hero-title {
+              font-size: 3.5rem !important;
+              color: white !important;
+              text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+              margin-bottom: 1rem !important;
+            }
+            
+            .hero-section .page-subtitle {
+              color: rgba(255, 255, 255, 0.9);
+              font-size: 1.3rem;
+              text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .stats-section {
+              position: relative;
+              background: linear-gradient(135deg, #4c51bf 0%, #553c9a 100%);
+              margin: 40px -30px;
+              padding: 60px 30px;
+              border-radius: 20px;
+              overflow: hidden;
+            }
+            
+            .floating-shapes {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              pointer-events: none;
+            }
+            
+            .shape {
+              position: absolute;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 50%;
+              animation: floatShapes 15s ease-in-out infinite;
+            }
+            
+            .shape-1 {
+              width: 80px;
+              height: 80px;
+              top: 20%;
+              left: 10%;
+              animation-delay: 0s;
+            }
+            
+            .shape-2 {
+              width: 120px;
+              height: 120px;
+              top: 60%;
+              right: 15%;
+              animation-delay: 5s;
+            }
+            
+            .shape-3 {
+              width: 60px;
+              height: 60px;
+              bottom: 30%;
+              left: 20%;
+              animation-delay: 10s;
+            }
+            
+            .shape-4 {
+              width: 100px;
+              height: 100px;
+              top: 10%;
+              right: 30%;
+              animation-delay: 7s;
+            }
+            
+            @keyframes floatShapes {
+              0%, 100% { transform: translateY(0px) rotate(0deg); }
+              50% { transform: translateY(-20px) rotate(180deg); }
+            }
+            
+            .features-section {
+              margin: 60px 0;
+              padding: 40px 0;
+            }
+            
+            .features-title {
+              text-align: center;
+              font-size: 2.5rem !important;
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              margin-bottom: 3rem !important;
+            }
+            
+            .feature-card {
+              background: rgba(255, 255, 255, 0.95);
+              border-radius: 20px;
+              padding: 40px 30px;
+              text-align: center;
+              box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              transition: all 0.3s ease;
+              height: 100%;
+            }
+            
+            .feature-card:hover {
+              transform: translateY(-10px);
+              box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            }
+            
+            .feature-icon {
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              border-radius: 50%;
+              width: 100px;
+              height: 100px;
+              margin: 0 auto 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+            }
+            
+            .feature-card h3 {
+              font-size: 1.5rem !important;
+              color: #2d3748 !important;
+              margin-bottom: 15px !important;
+            }
+            
+            .feature-card p {
+              color: #718096;
+              line-height: 1.6;
+              font-size: 1rem;
+            }
+            
+            .campaigns-section {
+              margin: 60px 0;
+            }
+            
+            .section-title {
+              text-align: center;
+              font-size: 2.5rem !important;
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              margin-bottom: 1rem !important;
+            }
+            
+            .section-subtitle {
+              text-align: center;
+              color: #718096;
+              font-size: 1.2rem;
+              margin-bottom: 3rem;
+            }
+            
             .stats-grid {
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
